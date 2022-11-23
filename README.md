@@ -1,11 +1,18 @@
-# snarkOS_as_service
+## snarkOS_as_service
 Simple way of making snarkOS run as a service on ubuntu
 
-## 1. Follow guidelines on installing snarkOS. 
-I use the ubuntu installer. 
+### 1. Follow guidelines on installing snarkOS. 
+Installation guidelines will probably change over time. Please read requirements and guidelines from the official repo. 
+I currently use the ubuntu installer after creating the directories and cloning the git repo. 
 
-## 2. Create or copy over the service file. 
-I have it located under ´/etc/systemd/system/´
+
+`sudo cd /opt/aleo/snarkOS`
+
+
+`sudo ./build_ubuntu.sh`
+
+### 2. Create or copy over the service file. 
+I have it located under `/etc/systemd/system/`
 
 
 You can also just create the file like `sudo nano /etc/systemd/system/snarkos.service`
@@ -13,16 +20,16 @@ You can also just create the file like `sudo nano /etc/systemd/system/snarkos.se
 
 Run `sudo systemctl daemon-reload`
 
-## 3. Create or copy over the config file so you don't need to change/reload the systemd files (it reads this conf file instead) 
+### 3. Create or copy over the config file so you don't need to change/reload the systemd files (it reads this conf file instead) 
 
 I have it located under `/opt/aleo/system/`
 
 
 You can also just create the file like `sudo nano /opt/aleo/conf`
 
-## Usefull command to start, stop and check status as well as check the logs
+### Usefull command to start, stop and check status as well as check the logs
 
-´sudo systemctl start snarkos.service´
+`sudo systemctl start snarkos.service`
 
 
 `sudo systemctl stop snarkos.service`
@@ -34,4 +41,4 @@ You can also just create the file like `sudo nano /opt/aleo/conf`
 `journalctl -u snarkos.service -f`
 
 
-´journalctl -u snarkos.service | tail -n100´
+`journalctl -u snarkos.service | tail -n100`
