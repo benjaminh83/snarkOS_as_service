@@ -1,0 +1,19 @@
+[Unit]
+Description=snarkos
+After=network.target
+
+[Service]
+EnvironmentFile=/opt/aleo/conf
+ExecStart=/opt/aleo/snarkOS/target/release/snarkos start $ARGS 
+
+Restart=always
+RestartSec=10
+
+LimitNOFILE=1024000:1024000
+LimitNPROC=1024000:1024000
+
+User=aleo
+Group=aleo
+
+[Install]
+WantedBy=multi-user.target
