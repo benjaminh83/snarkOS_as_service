@@ -1,0 +1,1 @@
+ARGS='--node [yourIP]:4133 --nodisplay --prover [YourPrivateKeyForTheProver]'
